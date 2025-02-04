@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="main_BTN_checkEligibility" type="id" />
+    <item name="main_ET_culturalImpact" type="id" />
+    <item name="main_ET_historicalSignificance" type="id" />
+    <item name="main_ET_commercialSuccess" type="id" />
+    <item name="main_ET_yearsActive" type="id" />
+    <item name="main_ET_influence" type="id" />
+    <item name="main_ET_identification" type="id" />
+    <item name="main_ET_artistUniqueDetail" type="id" />
+    <item name="main_ET_creationUniqueDetail" type="id" />
+    <item name="main_BTN_addArtist" type="id" />
+    <item name="main_BTN_addCreation" type="id" />
+    <item name="main_ET_creationType" type="id" />
+</resources>
