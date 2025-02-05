@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="32dp"
+    tools:context=".MainActivity">
+
+
+<!-- קלט לשם האמן -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_artistName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Artist Name"
+        android:inputType="text" />
+
+    <!-- קלט לסוג האמן -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_artistType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Artist Type (Poet, Singer, Player, Composer)"
+        android:inputType="text" />
+
+    <!-- שדה קלט האם האמן מזדהה עם היהדות/ישראל -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_identification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Identify with Judaism/Israel (true/false)"
+        android:inputType="text" />
+
+    <!-- שדה קלט להשפעה משמעותית על העם היהודי -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_influence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Significant Influence on Jewish People (true/false)"
+        android:inputType="text" />
+
+    <!-- שדה קלט עבור שנות פעילות -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_yearsActive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Years Active"
+        android:inputType="number" />
+
+    <!-- שדה קלט להצלחה מסחרית משמעותית -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_commercialSuccess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Significant Commercial Success (true/false)"
+        android:inputType="text" />
+
+    <!-- שדה קלט לחשיבות היסטורית עבור העם היהודי -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_historicalSignificance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Historical Significance for Jewish People (true/false)"
+        android:inputType="text" />
+
+    <!-- שדה קלט להשפעה תרבותית רחבה -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_culturalImpact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Broad Cultural Impact (true/false)"
+        android:inputType="text" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_artistUniqueDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Artist Unique Detail"
+        android:inputType="text"
+        android:visibility="gone" />
+
+    <!-- כפתור הוספת אמן חדש -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_BTN_addArtist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Artist" />
+
+    <!-- קלט לשם היצירה -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_creationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Creation Name"
+        android:inputType="text" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_artistOfCreationName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Artist Name"
+        android:inputType="text" />
+    <!-- קלט לסוג היצירה -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_creationType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Creation Type (Song, Poem, Tune)"
+        android:inputType="text" />
+
+    <!-- קלט עבור פרטים ייחודיים בהתאם לסוג היצירה -->
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/main_ET_creationUniqueDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Creation Unique Detail"
+        android:inputType="number"
+        android:visibility="gone" />
+
+    <!-- כפתור הוספת יצירה לאמן קיים -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_BTN_addCreation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Creation to Artist" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
