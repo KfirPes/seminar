@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText etArtistUniqueDetail, etCreationUniqueDetail;
     private Artist artist;
     private String poet;
+	private RecyclerView recyclerView;
+    private ArtistAdapter artistAdapter;
+    private Spinner spinner;
+    private ApiService apiService;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,49 @@ public class MainActivity extends AppCompatActivity {
         etCreationUniqueDetail = findViewById(R.id.main_ET_creationUniqueDetail);
         setupTypeListeners();
         updateHallFromDB();
+recyclerView = findViewById(R.id.recycler_view_artists);
+        spinner = findViewById(R.id.spinner_artist_type);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        artistAdapter = new ArtistAdapter(new ArrayList<>());
+        recyclerView.setAdapter(artistAdapter);
+
+        apiService = RetrofitClient.getClient().create(ApiService.class);
+
+        setupSpinner();
+private void setupSpinner() {
+        List<String> artistTypes = Arrays.asList("Poet", "Singer", "Player", "Composer");
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, artistTypes);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedType = artistTypes.get(position);
+                fetchArtistsByType(selectedType);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+    }
+
+    private void fetchArtistsByType(String type) {
+        apiService.getArtistsByType(type).enqueue(new Callback<List<String>>() {
+            @Override
+            public void onResponse(Call<List<String>> call, Response<List<String>> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    artistAdapter.updateList(response.body());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<String>> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Failed to load artists", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
         findViewById(R.id.main_BTN_addArtist).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

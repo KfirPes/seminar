@@ -9,7 +9,25 @@
     android:padding="32dp"
     tools:context=".MainActivity">
 
+	<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <Spinner
+        android:id="@+id/spinner_artist_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_artists"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
 <!-- קלט לשם האמן -->
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/main_ET_artistName"
